@@ -1,18 +1,18 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Decorations from "../components/Decorations.astro";
-import { person, projects, ui } from "../content/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Decorations from "../../components/Decorations.astro";
+import { person, projects, ui } from "../../content/site";
 ---
 
 <BaseLayout
   title={`${person.name} — ${person.title}`}
   description="UI/UX design portfolio. Selected work, case studies, and contact."
-  lang="zh"
+  lang="en"
 >
   <section class="container hero">
     <div class="reveal">
-      <h1>{ui.home.hero.zh}</h1>
-      <p>{ui.home.sub.zh}</p>
+      <h1>{ui.home.hero.en}</h1>
+      <p>{ui.home.sub.en}</p>
       <p style="margin-top: 10px">
         <a
           href="mailto:gujiayi2@gmail.com"
@@ -26,13 +26,13 @@ import { person, projects, ui } from "../content/site";
   <section class="container" style="position: relative">
     <Decorations variant="work" />
     <div class="section-head reveal">
-      <h2>{ui.home.section.zh}</h2>
-      <p class="meta">{ui.home.meta.zh}</p>
+      <h2>{ui.home.section.en}</h2>
+      <p class="meta">{ui.home.meta.en}</p>
     </div>
 
     <div class="grid">
       {projects.map((p, idx) => {
-        const href = p.externalUrl ? p.externalUrl : `/work/${p.slug}`;
+        const href = p.externalUrl ? p.externalUrl : `/en/work/${p.slug}`;
         const isExternal = Boolean(p.externalUrl);
         const feature = idx === 0 || idx === 1;
         return (
@@ -48,7 +48,7 @@ import { person, projects, ui } from "../content/site";
             </div>
             <div class="work-body">
               <div class="work-title">
-                <h3 style={`view-transition-name: title-${p.slug};`}>{p.title.zh}</h3>
+                <h3 style={`view-transition-name: title-${p.slug};`}>{p.title.en}</h3>
                 <span style="color: rgba(20,20,20,0.36); font-size: 12px">
                   {isExternal ? "↗" : "→"}
                 </span>
@@ -67,10 +67,11 @@ import { person, projects, ui } from "../content/site";
     <footer class="footer">
       <div>© {new Date().getFullYear()} {person.name}</div>
       <div style="display:flex; gap: 12px; flex-wrap: wrap; justify-content:flex-end;">
-        <a href="/en/">EN</a>
-        <a href="/about">About</a>
+        <a href="/">中文</a>
+        <a href="/en/about">About</a>
         <a href="mailto:gujiayi2@gmail.com">Email</a>
       </div>
     </footer>
   </section>
 </BaseLayout>
+

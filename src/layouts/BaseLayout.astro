@@ -1,0 +1,75 @@
+---
+import "../styles/global.css";
+import Decorations from "../components/Decorations.astro";
+
+type Props = {
+  title: string;
+  lang: "en" | "zh";
+  description?: string;
+};
+
+const { title, lang, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    {description ? <meta name="description" content={description} /> : null}
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta name="theme-color" content="#fbfaf7" />
+    <!-- View Transitions API (progressive enhancement) -->
+    <meta name="view-transition" content="same-origin" />
+
+    <script is:inline>
+      // Reveal on scroll (simple + lightweight)
+      (() => {
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduced) return;
+        const els = Array.from(document.querySelectorAll(".reveal"));
+        if (!("IntersectionObserver" in window) || els.length === 0) {
+          els.forEach((el) => el.classList.add("in"));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.12 },
+        );
+        els.forEach((el) => io.observe(el));
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <nav class="nav-links" aria-label="Primary">
+          <a href={lang === "en" ? "/en/" : "/"}>Work</a>
+          <a href={lang === "en" ? "/en/about" : "/about"}>About</a>
+          <a href={lang === "en" ? "/en/resume" : "/resume"}>Resume</a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <div style="position: relative">
+        <Decorations variant="top" />
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>
+

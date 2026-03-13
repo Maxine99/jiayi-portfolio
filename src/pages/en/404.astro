@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { person } from "../../content/site";
+---
+
+<BaseLayout title={`404 — ${person.name}`} lang="en" description="Page not found.">
+  <section class="container hero">
+    <div class="reveal">
+      <h1>Not found</h1>
+      <p>
+        This page doesn’t exist. Go back to
+        <a href="/en/" style="border-bottom:1px solid rgba(20,20,20,0.14);">Work</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+

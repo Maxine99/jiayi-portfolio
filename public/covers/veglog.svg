@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfaf7"/>
+      <stop offset="1" stop-color="#f0ede6"/>
+    </linearGradient>
+    <radialGradient id="g1" cx="75%" cy="35%" r="75%">
+      <stop offset="0" stop-color="rgba(47,93,80,0.16)"/>
+      <stop offset="1" stop-color="rgba(47,93,80,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#g1)"/>
+  <g fill="none" stroke="rgba(20,20,20,0.10)" stroke-width="2">
+    <path d="M360 690 C 520 540, 640 540, 800 610 S 1080 770, 1240 540" />
+    <circle cx="520" cy="540" r="10" fill="rgba(47,93,80,0.18)"/>
+    <circle cx="800" cy="610" r="10" fill="rgba(20,20,20,0.07)"/>
+    <circle cx="1240" cy="540" r="10" fill="rgba(46,74,120,0.16)"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial" fill="rgba(20,20,20,0.55)">
+    <text x="120" y="860" font-size="22" letter-spacing="0.02em">Learning + Logging</text>
+    <text x="120" y="898" font-size="16" fill="rgba(20,20,20,0.40)">Replace with your cover image</text>
+  </g>
+</svg>

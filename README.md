@@ -1,8 +1,6 @@
 # Portfolio (Astro)
 
-Personal UI/UX Design Portfolio — restrained, designer-first.
-
-Routes:
+A restrained, designer-first portfolio site (Work-first, high whitespace, subtle motion), with bilingual routes:
 
 - Chinese: `/`
 - English: `/en/`
@@ -32,12 +30,28 @@ If you add real images, update `src/content/site.ts` to point to the new extensi
 
 - Replace `public/favicon.svg` (and optionally add `public/favicon.ico`).
 
-## Deploy to GitHub Pages
+## Deploy to GitHub Pages (recommended)
 
-URL:
+Your GitHub Pages URL will be:
 
 - `https://maxine99.github.io/jiayi-portfolio/`
 
-GitHub Actions workflow:
+### One-click deploy (GitHub Actions)
 
-- `.github/workflows/deploy.yml`
+This repo already includes a workflow at `.github/workflows/deploy.yml`.
+
+1. Create a GitHub repo named `jiayi-portfolio` under `Maxine99`
+2. Push this project to the repo (default branch: `main`)
+3. In GitHub repo settings:
+   - Settings → Pages
+   - Source: **GitHub Actions**
+
+### Manual build (optional)
+
+Build with base path set to your repo name:
+
+```bash
+BASE_PATH=/jiayi-portfolio npm run build
+```
+
+Then publish `dist/` to GitHub Pages if you prefer a non-actions flow.

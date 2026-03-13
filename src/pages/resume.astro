@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { person } from "../content/site";
+---
+
+<BaseLayout title={`Resume — ${person.name}`} lang="zh" description="Resume snapshot.">
+  <section class="container hero">
+    <div class="reveal">
+      <h1>Resume</h1>
+      <p>
+        这里是一个轻量的简历摘要（非传统长简历页）。如果你之后想放 PDF，我会把它做成一个干净的 Download 链接。
+      </p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="grid">
+      <div class="work-card reveal" style="grid-column: span 12; padding: 18px;">
+        <h3 style="margin:0; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; color: rgba(20,20,20,0.7);">
+          Summary
+        </h3>
+        <p style="margin: 12px 0 0; color: rgba(20,20,20,0.62); line-height:1.75;">
+          UI/UX Designer focusing on complex systems, measurable usability improvements, and resilient interaction models.
+        </p>
+      </div>
+
+      <div class="work-card reveal" style="grid-column: span 12; padding: 18px;">
+        <h3 style="margin:0; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; color: rgba(20,20,20,0.7);">
+          Highlights
+        </h3>
+        <ul style="margin: 12px 0 0; padding-left: 18px; color: rgba(20,20,20,0.62); line-height:1.75;">
+          <li>Complex B2B workflows: reduce mis-operations and cognitive load via structure + confirmations.</li>
+          <li>Design systems: responsive components and consistent states.</li>
+          <li>Accessibility-aware UI (WCAG 2.1 AA practices).</li>
+        </ul>
+      </div>
+
+      <div class="work-card reveal" style="grid-column: span 12; padding: 18px;">
+        <h3 style="margin:0; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; color: rgba(20,20,20,0.7);">
+          Contact
+        </h3>
+        <p style="margin: 12px 0 0; color: rgba(20,20,20,0.62); line-height:1.75;">
+          <a href="mailto:gujiayi2@gmail.com" style="border-bottom: 1px solid rgba(20,20,20,0.14);">
+            {person.email}
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
